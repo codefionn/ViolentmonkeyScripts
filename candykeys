@@ -1,0 +1,15 @@
+// ==UserScript==
+// @name        candykeys remove out of stock
+// @namespace   Violentmonkey Scripts
+// @match       *://candykeys.com/*
+// @grant       none
+// @version     1.0
+// @author      -
+// @description 8/1/2023, 7:54:07 PM
+// ==/UserScript==
+
+for (const dangerTag of document.body.querySelectorAll('.tag.danger')) {
+  if (dangerTag.textContent === 'Out of stock') {
+    dangerTag.closest('.column').remove();
+  }
+}
